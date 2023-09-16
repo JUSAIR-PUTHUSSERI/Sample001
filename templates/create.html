@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Details Form</title>
+    <style>
+        /* Basic styling for the form */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            margin-top: 60px;
+            padding: 70px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        /* Style form fields */
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="submit"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* Style the submit button */
+        input[type="submit"] {
+            background-color: #15f396;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #260456;
+        }
+
+        /* Style the "Back to Home" button */
+        button {
+            background-color: #260456;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            margin-top: 70px;
+            margin-left: 60px;
+            padding: 10px 2px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button a {
+            color: white;
+            text-decoration: none;
+        }
+
+        button:hover {
+            background-color: #05613b;
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .container {
+                margin-top: 50px;
+            }
+            input[type="text"],
+            input[type="number"],
+            input[type="submit"],
+            select {
+                padding: 8px;
+                font-size: 14px;
+            }
+            button {
+                margin-left: 0;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button>
+        <a href="/">Back To Home</a>
+    </button>
+    <div class="container">
+      
+        <h2>Personal Details</h2>
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="place">Place:</label>
+            <input type="text" id="place" name="place" required>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    
+</body>
+</html>
